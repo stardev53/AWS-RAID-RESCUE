@@ -1,1 +1,19 @@
 
+『 𝙈𝙊𝘿𝙄𝙁𝙔 𝘼𝙒𝙎 𝙑𝙊𝙇𝙐𝙈𝙀 』
+
+《 𝘼𝙒𝙎 𝙤𝙣𝙡𝙮 𝙖𝙡𝙡𝙤𝙬 𝙩𝙤 𝙞𝙣𝙘𝙧𝙚𝙖𝙨𝙚 𝙨𝙩𝙤𝙧𝙖𝙜𝙚 》
+
+⇨ Click on Server ➤ Storage ➤ Click on the Link
+    ➣ Select Server Volume;
+    ➣ Actions;
+    ➣ Modify Volume;
+    ➣ Size (GIB)
+    ➣ Modify
+   
+⇨ lsblk 
+⇨ growpart /dev/xvda1
+⇨ lsblk
+⇨ df -hT
+⇨ xfs_growfs -d / 
+⇨ df -hT
+
