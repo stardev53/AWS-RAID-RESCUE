@@ -1,0 +1,35 @@
+『 𝙍𝙀𝙎𝘾𝙐𝙀 𝙎𝙀𝙍𝙑𝙀𝙍 』         
+
+《 𝙍𝙚𝙨𝙘𝙪𝙚 𝙎𝙚𝙧𝙫𝙚𝙧 𝙞𝙨 𝙩𝙤 𝙧𝙚𝙩𝙧𝙞𝙚𝙫𝙚 𝙙𝙞𝙨𝙠 𝙞𝙣𝙛𝙤𝙧𝙢𝙖𝙩𝙞𝙤𝙣 𝙛𝙧𝙤𝙢 𝙮𝙤𝙪𝙧 𝙢𝙖𝙞𝙣 𝙢𝙖𝙘𝙝𝙞𝙣𝙚 𝙩𝙝𝙖𝙩 𝙛𝙤𝙧 𝙨𝙤𝙢𝙚 𝙧𝙚𝙖𝙨𝙤𝙣 𝙮𝙤𝙪 𝙘𝙖𝙣'𝙩 𝙡𝙤𝙜 𝙞𝙣 𝙩𝙤. 
+   𝙄'𝙡𝙡 𝙨𝙝𝙤𝙬 𝙮𝙤𝙪 𝙖𝙣 𝙚𝙭𝙖𝙢𝙥𝙡𝙚 𝙤𝙛 𝙝𝙤𝙬 𝙩𝙤 𝙘𝙝𝙖𝙣𝙜𝙚 𝙩𝙝𝙚 𝙥𝙪𝙗𝙡𝙞𝙘 𝙠𝙚𝙮 𝙞𝙣 𝙘𝙖𝙨𝙚 𝙮𝙤𝙪 𝙝𝙖𝙫𝙚 𝙡𝙤𝙨𝙩 𝙩𝙝𝙚 𝙥𝙧𝙞𝙫𝙖𝙩𝙚 𝙠𝙚𝙮. 》
+   
+⇨ Stop your main server;
+⇨ Go to Volumes;
+⇨ Identify wich volume is attached in your main server.
+⇨ Detach it from the main server;
+⇨ attach the volume to the rescue server;
+
+      『 𝙂𝙤 𝙩𝙤 𝙩𝙝𝙚 𝙏𝙚𝙧𝙢𝙞𝙣𝙖𝙡 ( 𝙏𝙚𝙧𝙢𝙞𝙪𝙨 | 𝙋𝙪𝙩𝙩𝙮 ), 𝙖𝙣𝙙 𝙡𝙤𝙜𝙞𝙣 𝙤𝙣 𝙩𝙜𝙚 𝙧𝙚𝙨𝙘𝙪𝙚 𝙨𝙚𝙧𝙫𝙚𝙧 』
+⇨ lsblk (to see the volumes)
+⇨ cd / 
+⇨ ls -l
+⇨ mkdir I_WAS_HERE (To identify the rescue disk)
+⇨ cd mnt/
+⇨ mkdir disco2
+⇨ ls -l /dev/xv* (To see the volumes)
+⇨ mount -t xfs -o nouuid /dev/xvdf1 /mnt/disco2/ (This command link the main server volume with the disco2 folder.)
+⇨ lsblk (check if is attached to disco2 folder)
+⇨ cd /mnt/disco2
+⇨ ls -l 
+⇨ nano /mnt/disco2/home/ec2-user/.ssh/authorized_keys (Paste your public key here)
+⇨ cd /
+⇨ sync && umount /mnt/disco2/ (Break the connection between the volume and folder.)
+⇨ cd /
+⇨ lsblk 
+⇨ shutdown now
+
+⇨ Go to Volumes;
+⇨ Detach server volume from the rescue;
+⇨ Attach the volume to main server; 
+⇨ "Device Name" Change it from default to /dev/xvda
+⇨ Done | Now login to the Main Server without Problems | 
