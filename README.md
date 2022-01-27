@@ -1,2 +1,2 @@
 # AWS-RAID-RESCUE
-Raid 6 Setup | AWS Rescue server
+Raid 5&6 Setup | AWS Rescue server
