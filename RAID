@@ -10,12 +10,11 @@
 ⇨ apt-get install mdadm gdisk raidutils cryptsetup
 ⇨ lsblk (Check Disks)
 
-           ❗❗ 𝙍𝘼𝙄𝘿5 / 𝙇𝙐𝙆𝙎 / 𝙇𝙑𝙈 (Fazer com 3 discos)
+           ❗❗ 𝙍𝘼𝙄𝘿5 / 𝙇𝙐𝙆𝙎 / 𝙇𝙑𝙈 (3 DISKS)
            
 ⇨ gdisk /dev/xvdf         | o 》Y 》n 》ENTER 》ENTER 》ENTER 》 fd00 》w 》Y | 
 ⇨ gdisk /dev/xvdg         | o 》Y 》n 》ENTER 》ENTER 》ENTER 》 fd00 》w 》Y | 
 ⇨ gdisk /dev/xvdh         | o 》Y 》n 》ENTER 》ENTER 》ENTER 》 fd00 》w 》Y | 
-⇨ gdisk /dev/xvdi         | o 》Y 》n 》ENTER 》ENTER 》ENTER 》 fd00 》w 》Y | 
 ⇨ lsblk (Check)
 ⇨ mdadm --create /dev/md0 --level 5 --raid-devices 3 (DISK)1 (DISK)1 (DISK)1 
 ⇨ mdadm --detail /dev/md0
@@ -25,8 +24,6 @@
 ⇨ vgcreate vg0 /dev/mapper/md0_crypt
 ⇨ cryptsetup luksAddKey /dev/md0 
 ⇨ cryptsetup luksDump /dev/md0 (Check Passw0rds)
-⇨ pvcreate /dev/mapper/md0_crypt
-⇨ vgcreate vg0 /dev/mapper/md0_crypt
 ⇨ lvcreate -n vg0lv0 -l +75%FREE vg0
 ⇨ lvcreate -n vg0lv1 -l +25%FREE vg0
 ⇨ lvdisplay
@@ -41,8 +38,9 @@
 
 
 
-           ❗❗  𝙍𝘼𝙄𝘿6 / 𝙇𝙑𝙈 / 𝙇𝙐𝙆𝙎 (Minimo 4 discos)
+           ❗❗  𝙍𝘼𝙄𝘿6 / 𝙇𝙑𝙈 / 𝙇𝙐𝙆𝙎 (4 DISKS)
            
+⇨ gdisk /dev/xvdi         | o 》Y 》n 》ENTER 》ENTER 》ENTER 》 fd00 》w 》Y | 
 ⇨ gdisk /dev/xvdj         | o 》Y 》n 》ENTER 》ENTER 》ENTER 》 fd00 》w 》Y | 
 ⇨ gdisk /dev/xvdk         | o 》Y 》n 》ENTER 》ENTER 》ENTER 》 fd00 》w 》Y | 
 ⇨ gdisk /dev/xvdl         | o 》Y 》n 》ENTER 》ENTER 》ENTER 》 fd00 》w 》Y | 
