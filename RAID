@@ -25,7 +25,7 @@
 ⇨ cryptsetup luksAddKey /dev/md0 
 ⇨ cryptsetup luksDump /dev/md0 (Check Passw0rds)
 ⇨ lvcreate -n vg0lv0 -l +75%FREE vg0
-⇨ lvcreate -n vg0lv1 -l +25%FREE vg0
+⇨ lvcreate -n vg0lv1 -l +100%FREE vg0 (25% of the disk left)
 ⇨ lvdisplay
 ⇨ mkfs.xfs /dev/vg0/vg0lv0
 ⇨ mkfs.xfs /dev/vg0/vg0lv1
@@ -50,7 +50,7 @@
 ⇨ pvcreate /dev/md1
 ⇨ vgcreate vg1 /dev/md1
 ⇨ lvcreate -n vg1lv0 -l +50%FREE vg1
-⇨ lvcreate -n vg1lv1 -l +50%FREE vg1
+⇨ lvcreate -n vg1lv1 -l +100%FREE vg1 (50% of the disk left)
 ⇨ cryptsetup luksFormat --hash=sha512 --key-size=512 --cipher=aes-xts-plain64 --verify-passphrase /dev/vg1/vg1lv0
 ⇨ cryptsetup luksFormat --hash=sha512 --key-size=512 --cipher=aes-xts-plain64 --verify-passphrase /dev/vg1/vg1lv1
 ⇨ cryptsetup luksOpen /dev/vg1/vg1lv0 vg1lv0_crypt
